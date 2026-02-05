@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { css } from '@emotion/react'
 
 function Button(props) {
     const { children, ...rest } = props
@@ -24,9 +25,16 @@ function PhotoCard(props) {
 }
 
 export default function App() {
+    const styles = css`
+        background-color: lavenderblush;
+        color: mediumvioletred;
+        margin: 0;
+        padding: 12px;
+    `
+
     return (
         <>
-            <h1>What a boring app...</h1>
+            <h1 css={styles}>What a boring app...</h1>
         </>
     )
 }
