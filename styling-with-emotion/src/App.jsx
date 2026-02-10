@@ -7,19 +7,18 @@ function Button(props) {
 }
 
 function PhotoCard(props) {
-    const { url, caption } = props
+    const { url, caption, author } = props
     const [ isFaved, setIsFaved ] = useState(false)
     return (
         <div>
-            <div>
-                <img src={url} alt={caption} />
-            </div>
+            <img src={url} alt={caption} />
             <div>
                 <p>{caption}</p>
-                <Button onClick={() => setIsFaved(prev => !prev)}>
-                    {isFaved ? "♥" : "♡"}
-                </Button>
+                <p>by {author}</p>
             </div>
+            <button onClick={() => setIsFaved(prev => !prev)}>
+                {isFaved ? "♥" : "♡"}
+            </button>
         </div>
     )
 }
